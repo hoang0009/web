@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Báo Tường</title>
+    <style>
+        .canhgiua {
+            text-align: center;
+            margin: 0 auto;
+            color: rgb(14, 86, 231);
+        }
+        .color {
+            color: rgb(39, 42, 40);
+        }
+        .canhtrai {
+            text-align: left;
+            justify-content: flex-start;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #d3e8ed;
+            color: #333;
+        }
+        
+        .header {
+            text-align: center;
+            font-weight: bold;
+            margin-bottom: 20px;
+            border-bottom: 3px solid #4ac1e8;
+            padding-bottom: 15px;
+            background-color: #fde6ff;
+            padding: 20px;
+            border-radius: 8px 8px 0 0;
+            color: #7e1a76;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .content {
+            margin-bottom: 20px;
+            text-align: center;
+            font-weight: bold;
+            border-bottom: 2px solid #4a86e8;
+            padding-bottom: 10px;
+            background-color: #f9fbff;
+            padding: 15px;
+            color: #1a237e;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .row {
+            display: flex;
+            margin-bottom: 20px;
+        }
+        
+        .box {
+            border: 1px solid #4a86e8;
+            padding: 12px;
+            margin: 5px;
+            flex: 1;
+            text-align: center;
+            min-height: 100px;
+            background-color: #e6f0ff;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .box:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .box:nth-child(1) {
+            background-color: #f3e5f5;
+            border-color: #9c27b0;
+        }
+        
+        .box:nth-child(2) {
+            background-color: #e8f5e9;
+            border-color: #4caf50;
+        }
+        
+        .box:nth-child(3) {
+            background-color: #fff8e1;
+            border-color: #ffc107;
+        }
+        
+        .section {
+            margin-bottom: 20px;
+            border-bottom: 2px solid #4a86e8;
+            padding-bottom: 10px;
+        }
+        
+        .section-row {
+            display: flex;
+        }
+        
+        .section-box {
+            border: 1px solid #3f51b5;
+            padding: 12px;
+            margin: 5px;
+            flex: 1;
+            background-color: #e8eaf6;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .section-box:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .section:nth-child(odd) .section-box:first-child {
+            background-color: #e3f2fd;
+            border-color: #2196f3;
+        }
+        
+        .section:nth-child(odd) .section-box:last-child {
+            background-color: #e1f5fe;
+            border-color: #03a9f4;
+        }
+        
+        .section:nth-child(even) .section-box:first-child {
+            background-color: #e0f7fa;
+            border-color: #00bcd4;
+        }
+        
+        .section:nth-child(even) .section-box:last-child {
+            background-color: #e0f2f1;
+            border-color: #009688;
+        }
+        
+        .media-section {
+            margin-bottom: 20px;
+            border-bottom: 2px solid #ff5722;
+            padding-bottom: 10px;
+        }
+        
+        .media-row {
+            display: flex;
+        }
+        
+        .media-box {
+            border: 1px solid #ff5722;
+            padding: 12px;
+            margin: 5px;
+            flex: 1;
+            min-height: 120px;
+            background-color: #fff3e0;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .media-box:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .media-box:nth-child(1) {
+            background-color: #fce4ec;
+            border-color: #e91e63;
+        }
+        
+        .media-box:nth-child(2) {
+            background-color: #f3e5f5;
+            border-color: #9c27b0;
+        }
+        
+        .media-box:nth-child(3) {
+            background-color: #ede7f6;
+            border-color: #673ab7;
+        }
+        
+        .media-box:nth-child(4) {
+            background-color: #e8eaf6;
+            border-color: #3f51b5;
+        }
+        
+        .comment-section {
+            margin-bottom: 20px;
+            border-bottom: 2px solid #4a86e8;
+            padding-bottom: 10px;
+        }
+        
+        .comment-box {
+            border: 1px solid #2196f3;
+            padding: 12px;
+            margin: 5px;
+            text-align: center;
+            min-height: 60px;
+            background-color: #e3f2fd;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .comment-box:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .footer {
+            text-align: center;
+            font-size: 0.9em;
+            padding: 15px;
+            background-color: gray;
+            color: #ffffff;
+            border-radius: 0 0 8px 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        Chào mừng đến với Báo Tường nhóm mình<br>
+        Nhóm 6 Lớp12c8<br>
+    </div>
+    <div class="content">
+        Bài báo Tường
+    </div>
+    <div class="section">
+        <div class="section-row">
+            <div class="section-box">
+                Kính thưa quý thầy cô và các bạn!<br>
+                Lớp 12C8 của chúng em là một tập thể đoàn kết, tràn đầy năng lượng và sự sáng tạo. Trong suốt 3 năm học cấp 3, chúng em đã cùng nhau trải qua nhiều kỷ niệm đáng nhớ, từ những tiết học nghiêm túc đến những giờ ra chơi vui vẻ. <br>
+                Nhóm 6 tuy nhỏ nhưng luôn là một phần quan trọng của lớp, cùng nhau học tập, hỗ trợ và tạo nên những khoảnh khắc thanh xuân rực rỡ.
+            </div>
+        </div>
+    <div class="row">
+        <div class="box">
+            <video src="ảnh/iLoveYt.net_YouTube_China-PiPa-Ban-Nhac-EDM-CHINA-Huyen-Thoa_Media_sL5688Hh0y4_002_720p.mp4" controls width="300" height="200"></video><br>
+            <a href="https://youtu.be/sL5688Hh0y4">Video</a>
+        </div>
+        <div class="box">
+            Ảnh Lớp 12c8<br>
+            <img src="ảnh/anh 3.jpg" alt="Lớp12c8" width="300" height="200"><br>
+            Cảm ơn thầy cô và các bạn đã đồng hành cùng chúng em trong hành trình đáng nhớ này!
+        </div>
+        <div class="box">
+            <img src="ảnh/ảnh 2.jpg" alt="Tuổi học trò" width="300" height="200"><br>
+            <audio src="https://www.youtube.com/watch?v=XJdw2Nsb1f8"controls></audio> <br>
+            <a href="https://www.youtube.com/watch?v=MT_Dos-P3Fg">video mp3</a>
+        </div>
+    </div>
+    </div>
+    <div class="section">
+        <div class="section-row">
+            <div class="section-box">
+                <div class="canhgiua">NGÀY RA TRƯỜNG</div><br>
+               <div class="color"> Ngày ra trường là khoảnh khắc lưu lại nhiều cảm xúc nhất trong lòng mỗi học sinh. Tiếng trống trường vang lên lần cuối, những lời chúc phúc của thầy cô, và những cái ôm thật chặt của bạn bè khiến lòng em bồi hồi.
+Ba năm học cấp 3 trôi qua như một giấc mơ, để lại trong em những kỷ niệm đẹp về tình bạn, sự nỗ lực và trưởng thành. Ngày hôm nay, chúng em nói lời tạm biệt mái trường thân yêu, mang theo hành trang là kiến thức và tình cảm quý báu.
+Dù mai này mỗi người một phương, em sẽ mãi nhớ về ngày ra trường <br>
+– ngày kết thúc một hành trình và mở ra một chân trời mới.
+</div>
+            </div>
+            <div class="section-box">
+                        <div class="canhgiua"> CỦA TẬP THỂ LỚP 12C8</div> <br>
+                <img src="ảnh/ảnh 1.jpg" alt="Tập thể 12c8" width="400" height="300">
+            </div>
+        </div>
+    </div>
+    
+    <div class="comment-section">
+        <div class="comment-box">
+            <div class="canhgiua">BÌNH LUẬN</div><br>
+            <div class="canhtrai"><form action="login.php" method="post">
+                Tên đăng nhập: <input type="text" name="username" required><br>
+                Mật khẩu:      <input type="password" name="password" required><br>
+                Email:          <input type="text"> <br>
+                Đánh giá: <input type="radio" name="rating" value="1">1 Sao
+                          <input type="radio" name="rating" value="2">2 Sao
+                          <input type="radio" name="rating" value="3">3 Sao
+                          <input type="radio" name="rating" value="4">4 Sao
+                          <input type="radio" name="rating" value="5">5 Sao<br>
+                <label>Đóng góp ý kiến:<textarea name="txtcomment" rows="6" cols="40"></textarea></label><br>
+                <input type="button" value="Gửi">
+            </form>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        2025 Tổ2 - Lớp 12c8 - Trường THPT Nguyễn Trãi <br>
+        Email:to2@gmail.com <br>
+   </div>
+</body>
+</html>
